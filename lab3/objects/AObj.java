@@ -1,5 +1,8 @@
 package lab3.objects;
 import lab3.*;
+import lab3.actors.AbstractActor;
+
+import java.util.Objects;
 
 public abstract class AObj implements IObj, Location {
     protected String name;
@@ -12,6 +15,28 @@ public abstract class AObj implements IObj, Location {
     AObj(String name){
         this.name = name;
         place = new Place("");
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AObj aObj = (AObj) o;
+        return Objects.equals(name, aObj.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Object{" +
+                "name='" + name + '\'' +
+                ", place='" + place + '\'' +
+                ", owner=" + owner +
+                '}';
     }
     public void takePlaseIn(Place place){
         System.out.printf("В " + place.getName() +" -- " + name);

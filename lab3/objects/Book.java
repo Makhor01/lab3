@@ -10,7 +10,4 @@ public class Book extends AObj{
     public Book(String name) {
         super(name);
     }
-    public void takePlaseIn(Place place){
-        System.out.printf("В " + place.getName() +" -- " + name);
-    }
 }

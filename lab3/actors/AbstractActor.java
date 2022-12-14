@@ -2,7 +2,7 @@ package lab3.actors;
 
 import java.util.Objects;
 import lab3.*;
-public class AbstractActor implements IActor {
+public class AbstractActor implements Nameable {
     protected Gender gender;
     protected String name;
     protected Place place;
@@ -45,11 +45,6 @@ public class AbstractActor implements IActor {
                 ", place='" + place + '\'' +
                 ", gender=" + gender +
                 '}';
-    }
-
-    @Override
-    public void run(Place place) {
-        System.out.println(this.name +" бежит в место " + place.getName());
     }
     @Override
     public String getName() {

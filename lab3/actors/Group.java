@@ -3,7 +3,7 @@ package lab3.actors;
 import lab3.Place;
 
 public class Group implements StatusDoing{
-    public Status status;
+    private Status status;
     protected String a;
     protected String b;
     public Group(String name1, String name2, Status s){

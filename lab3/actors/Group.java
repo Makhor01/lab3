@@ -72,26 +72,26 @@ public class Group implements StatusDoing {
                 '}';
     }
     public void goToPlace(Place p) {
-        System.out.printf(getStatus() + "пошли " + getGroupPronoun() + " " + p.getName() + ". ");
+        System.out.print(getStatus() + "пошли " + getGroupPronoun() + " " + p.getName() + ". ");
     }
 
     public void tookCours(Place p) {
-        System.out.printf(getStatus() + "направились к " + p.getName() + 'у');
+        System.out.print(getStatus() + "направились к " + p.getName() + 'у');
     }
 
     public void climbOn(Place p) {
-        System.out.printf(getStatus() + getGroupPronoun() + " вскарабкались на" + p.getName() + 'у');
+        System.out.print(getStatus() + getGroupPronoun() + " вскарабкались на" + p.getName() + 'у');
     }
 
     public void went(Place p) {
-        System.out.printf(getGroupName() + " " + getStatus() + "ушли " + p.getName());
+        System.out.print(getGroupName() + " " + getStatus() + "ушли " + p.getName());
     }
 
     public void crol(Place p) {
-        System.out.printf(" поползли к " + p.getName() + "е. ");
+        System.out.print(" поползли к " + p.getName() + "е. ");
     }
 
     public void lookIn(Place p) {
-        System.out.printf(getStatus() + " заглянули в " + p.getName() + '.');
+        System.out.print(getStatus() + " заглянули в " + p.getName() + '.');
     }
 }

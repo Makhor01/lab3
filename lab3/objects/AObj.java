@@ -42,7 +42,7 @@ public abstract class AObj implements IObj, Location {
     }
 
     public void takePlaseIn(Place place) {
-        System.out.printf("В " + place.getName() + " -- " + name);
+        System.out.print("В " + place.getName() + " -- " + name);
     }
 
     public String getName() {

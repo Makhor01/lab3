@@ -2,7 +2,7 @@ package lab3.actors;
 
 import java.util.Objects;
 import lab3.*;
-public class AbstractActor implements Nameable {
+public abstract class AbstractActor implements Nameable {
     protected Gender gender;
     protected String name;
     protected Place place;
@@ -26,16 +26,13 @@ public class AbstractActor implements Nameable {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name,gender,place);
     }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AbstractActor abstractActor = (AbstractActor) o;
-        return Objects.equals(name, abstractActor.name);
+    public boolean equals(AbstractActor abstractActor) {
+        if (abstractActor == null) return false;
+        if (this.getClass() != abstractActor.getClass() ) return false;
+        if (name.equals(abstractActor.getName()) && gender.equals(abstractActor.getGender()) && place.equals(abstractActor.getPlace())) return true;
+        return false;
     }
 
     @Override
@@ -49,5 +46,11 @@ public class AbstractActor implements Nameable {
     @Override
     public String getName() {
         return this.name;
+    }
+    public Gender getGender() {
+        return this.gender;
+    }
+    public Place getPlace() {
+        return this.place;
     }
 }

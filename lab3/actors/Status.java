@@ -7,6 +7,10 @@ public enum Status {
     CAREFULLI, // С осторожностью
     SHORTROAD,
     STEAlTH,
+    ANGRY,
+    SCARY,
+    SAD,
     NORMAL ;
+
 
 }

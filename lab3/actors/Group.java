@@ -1,7 +1,7 @@
 package lab3.actors;
 
 import lab3.Place;
-
+import lab3.exeptions.*;
 import java.util.Objects;
 
 // equals hashcode
@@ -49,10 +49,19 @@ public class Group implements StatusDoing {
             case STEAlTH:
                 return " незапетно ";
             default:
+                if (status==null){
+                    throw new NoSratusException("Empty status");
+                }
                 return "";
         }
     }
 
+    public void howIndian(){
+        final class indian{
+            static String name = "индейцы";
+        }
+        System.out.print(" и , как " + indian.name + ",");
+    }
     @Override
     public int hashCode() {
         return Objects.hash(a,b,status);
@@ -94,4 +103,14 @@ public class Group implements StatusDoing {
     public void lookIn(Place p) {
         System.out.print(getStatus() + " заглянули в " + p.getName() + '.');
     }
+    public void runAway(){
+        System.out.print(" броситься наутек ");
+    }
+    public void notHaveTime(boolean isHaveTime) throws NotHaveATimeException{
+        if (!isHaveTime){
+            throw new NotHaveATimeException("Не успел ");
+        }
+        System.out.print(" не успели ");
+    }
+
 }
